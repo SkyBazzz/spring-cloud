@@ -1,0 +1,16 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.epam.balkashyn</groupId>
+    <artifactId>hotel</artifactId>
+    <version>1</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>configserver</module>
+        <module>eurekaserver</module>
+        <module>guestservice</module>
+        <module>roomservice</module>
+        <module>roomreservationservice</module>
+    </modules>
+</project>
