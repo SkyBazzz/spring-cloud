@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.epam.balkashyn.dto.Guest;
 
-@FeignClient("guestservices")
+@FeignClient("guestservice")
 public interface GuestClient {
 
     @GetMapping("/guests")

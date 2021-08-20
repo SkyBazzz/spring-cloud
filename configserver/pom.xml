@@ -7,11 +7,11 @@
     <parent>
         <groupId>com.epam.balkashyn</groupId>
         <artifactId>hotel</artifactId>
-        <version>1</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>jar</packaging>
 
-    <artifactId>configserver</artifactId>
+    <artifactId>config</artifactId>
     <name>config-server</name>
     <description>Demo project for Spring Boot</description>
 
@@ -52,6 +52,13 @@
     </dependencyManagement>
 
     <build>
+        <finalName>service</finalName>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

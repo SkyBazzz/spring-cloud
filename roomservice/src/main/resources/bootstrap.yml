@@ -1,0 +1,10 @@
+spring:
+  application.name: roomservice
+  cloud:
+    config:
+      failFast: true
+      retry:
+        max-attempts: 60
+      discovery:
+        enabled: false
+      uri: 'http://configserver:9000'

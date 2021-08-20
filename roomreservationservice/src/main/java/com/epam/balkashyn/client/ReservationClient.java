@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.epam.balkashyn.dto.Reservation;
 
-@FeignClient("reservationservices")
+@FeignClient("reservationservice")
 public interface ReservationClient {
     @GetMapping("/reservations")
     List<Reservation> getAllReservations(@RequestParam(name = "date", required = false) Date date);

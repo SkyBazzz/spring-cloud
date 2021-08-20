@@ -1,0 +1,5 @@
+server.port: 8801
+eureka:
+  client:
+    service-url:
+      defauleZone: 'http://eurekaserver:8761/eureka'

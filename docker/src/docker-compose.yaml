@@ -1,0 +1,60 @@
+version: '2'
+
+services:
+  configserver:
+    build: ../../configserver
+    image: myownrepo/configserver
+    ports:
+      - "9000:9000"
+
+  eurekaserver:
+    build: ../../eurekaserver
+    image: myownrepo/eurekaserver
+    restart: on-failure
+    ports:
+      - "8761:8761"
+    depends_on:
+      - configserver
+
+  guestservice:
+    build: ../../guestservice
+    image: myownrepo/guestservice
+    restart: on-failure
+    ports:
+      - "8800:8800"
+    depends_on:
+      - configserver
+      - eurekaserver
+
+  reservationservice:
+    build: ../../reservationservice
+    image: myownrepo/reservationservice
+    restart: on-failure
+    ports:
+      - "8801:8801"
+    depends_on:
+      - configserver
+      - eurekaserver
+
+  roomservice:
+    build: ../../roomservice
+    image: myownrepo/roomservice
+    restart: on-failure
+    ports:
+      - "8802:8802"
+    depends_on:
+      - configserver
+      - eurekaserver
+
+  roomreservationservice:
+    build: ../../roomreservationservice
+    image: myownrepo/roomreservationservice
+    restart: on-failure
+    ports:
+      - "8810:8810"
+    depends_on:
+      - configserver
+      - eurekaserver
+      - roomservice
+      - reservationservice
+      - guestservice

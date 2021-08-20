@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.epam.balkashyn.dto.Room;
 
-@FeignClient("roomservices")
+@FeignClient("roomservice")
 public interface RoomClient {
     @GetMapping("/rooms")
     List<Room> getAllRooms();

@@ -1,0 +1,10 @@
+server.port: 8761
+spring:
+  application.name: 'eurekaserver'
+  cloud:
+    config:
+      failFast: true
+      retry:
+        max-attempts: 60
+      discovery:
+        enabled: false
